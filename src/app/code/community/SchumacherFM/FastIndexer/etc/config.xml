@@ -68,6 +68,7 @@
                     <!--@see observer::rewriteCatalogResourceCategoryFlat() where the dyn rewrite happens-->
                     <!--<category_flat>SchumacherFM_FastIndexer_Model_Resource_Catalog_Category_Flat</category_flat>-->
                     <category_flat_collection>SchumacherFM_FastIndexer_Model_Resource_Catalog_Category_Flat_Collection</category_flat_collection>
+                    <product_flat_indexer>SchumacherFM_FastIndexer_Model_Resource_Catalog_Product_Flat_Indexer</product_flat_indexer>
                 </rewrite>
             </catalog_resource>
         </models>
