@@ -473,6 +473,15 @@
                     <model>schumacherfm_fastindexer/cron::unprocessed_events_index</model>
                 </run>
             </schumacherfm_fastindexer_events_cron>
+            <!--TODO: complete this-->
+            <!--<schumacherfm_fastindexer_configurable_events_cron>-->
+                <!--<schedule>-->
+                    <!--<config_path>fastindexer/configurable_indexer/scheduler_cron_expr</config_path>-->
+                <!--</schedule>-->
+                <!--<run>-->
+                    <!--<model>schumacherfm_fastindexer/cron::executeUnprocessedEventsForProcessesConfigured</model>-->
+                <!--</run>-->
+            <!--</schumacherfm_fastindexer_configurable_events_cron>-->
         </jobs>
     </crontab>
 </config>

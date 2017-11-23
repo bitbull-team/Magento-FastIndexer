@@ -243,6 +243,59 @@
                         </disable_transaction_for_product>
                     </fields>
                 </indexer>
+                <configurable_indexer translate="label" module="schumacherfm_fastindexer">
+                    <label>Configurable Indexer</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>45</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>0</show_in_website>
+                    <show_in_store>0</show_in_store>
+                    <fields>
+                        <enable_cron_index>
+                            <label>Enable Configurable Cron Indexing</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>110</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <depends>
+                                <!--@see Mage_Adminhtml_Block_System_Config_Form::initFields-->
+                                <is_active>
+                                    <fieldset>general</fieldset>
+                                    <value>1</value>
+                                </is_active>
+                            </depends>
+                            <comment>
+                                Note configure only indexes with manual update
+                            </comment>
+                        </enable_cron_index>
+                        <scheduler_cron_expr>
+                            <label>Crontab</label>
+                            <comment>Cron expressions. (E.g. "20 * * * *")</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>120</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <depends>
+                                <enable_cron_index>
+                                    <value>1</value>
+                                </enable_cron_index>
+                            </depends>
+                        </scheduler_cron_expr>
+                        <process_list translate="label">
+                            <label>List of Seasons</label>
+                            <frontend_type>multiselect</frontend_type>
+                            <source_model>thedoublef_catalogcustomization/system_config_source_season</source_model>
+                            <sort_order>90</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <depends><enabled>1</enabled></depends>
+                        </process_list>
+                    </fields>
+                </configurable_indexer>
                 <url_indexer translate="label" module="schumacherfm_fastindexer">
                     <label>URL Indexer</label>
                     <frontend_type>text</frontend_type>

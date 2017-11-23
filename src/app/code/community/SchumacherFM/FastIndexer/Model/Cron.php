@@ -245,4 +245,38 @@ class SchumacherFM_FastIndexer_Model_Cron extends Varien_Object
     {
         Mage::getResourceSingleton('index/process')->rollBack();
     }
+
+
+    public function executeUnprocessedEventsForProcessesConfigured()
+    {
+        if (false === $this->getHelper()->isConfigurableCronAutoIndexEnabled()) {
+            return null;
+        }
+        $this->_indexerTransactionBegin();
+        try {
+            $pCollection = Mage::getSingleton('index/indexer')->getProcessesCollection();
+            /** @var Mage_Index_Model_Process $process */
+            foreach ($pCollection as $process) {
+
+                //TODO: finish this when we have the ok by ProjectManager
+//                $process->setMode(Mage_Index_Model_Process::MODE_SCHEDULE);
+//                $eventLimit      = (int)Mage::getStoreConfig('system/asyncindex/event_limit');
+//                $unprocessedColl = $process->getUnprocessedEventsCollection()->setPageSize($eventLimit);
+//
+//                /** @var Mage_Index_Model_Event $unprocessedEvent */
+//                foreach ($unprocessedColl as $unprocessedEvent) {
+//                    $process->processEvent($unprocessedEvent);
+//                    $unprocessedEvent->save();
+//                }
+//                if (count(Mage::getResourceSingleton('index/event')->getUnprocessedEvents($process)) === 0) {
+//                    $process->changeStatus(Mage_Index_Model_Process::STATUS_PENDING);
+//                }
+            }
+            $this->_indexerTransactionCommit();
+        } catch (Exception $e) {
+            $this->_indexerTransactionRollBack();
+            throw $e;
+        }
+    }
+
 }
