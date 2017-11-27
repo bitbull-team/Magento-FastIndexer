@@ -15,6 +15,7 @@ class SchumacherFM_FastIndexer_Helper_Data extends Mage_Core_Helper_Abstract
     const CONFIG_DB_NAME = 'global/resources/default_setup/connection/dbname';
 
     const XPATH_INDEXER_PRODUCT_FLAT_TRANSACTION_DISABLED = 'fastindexer/indexer/disable_transaction_for_product';
+    const XPATH_INDEXER_PRICE_TRANSACTION_DISABLED = 'fastindexer/indexer/disable_transaction_for_price';
 
     /**
      * @var boolean
@@ -283,8 +284,13 @@ class SchumacherFM_FastIndexer_Helper_Data extends Mage_Core_Helper_Abstract
             $this->optimizeUrlRewriteFlatCategory();
     }
 
-    public function isTransactionDisabledForProductFlatReindes(){
+    public function isTransactionDisabledForProductFlatReindex(){
         return Mage::getStoreConfigFlag(self::XPATH_INDEXER_PRODUCT_FLAT_TRANSACTION_DISABLED);
+    }
+
+
+    public function isTransactionDisabledForPriceReindex(){
+        return Mage::getStoreConfigFlag(self::XPATH_INDEXER_PRICE_TRANSACTION_DISABLED);
     }
 
     /**

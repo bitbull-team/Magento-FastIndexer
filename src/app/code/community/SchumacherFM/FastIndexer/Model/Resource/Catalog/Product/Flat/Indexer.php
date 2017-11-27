@@ -12,7 +12,7 @@ class SchumacherFM_FastIndexer_Model_Resource_Catalog_Product_Flat_Indexer exten
      */
     public function reindexAll()
     {
-        $disableTransaction = Mage::helper('schumacherfm_fastindexer')->isTransactionDisabledForProductFlatReindes();
+        $disableTransaction = Mage::helper('schumacherfm_fastindexer')->isTransactionDisabledForProductFlatReindex();
 
         foreach (Mage::app()->getStores() as $storeId => $store) {
             $this->prepareFlatTable($storeId);
