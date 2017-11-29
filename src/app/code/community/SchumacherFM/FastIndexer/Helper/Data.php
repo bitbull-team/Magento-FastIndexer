@@ -16,6 +16,7 @@ class SchumacherFM_FastIndexer_Helper_Data extends Mage_Core_Helper_Abstract
 
     const XPATH_INDEXER_PRODUCT_FLAT_TRANSACTION_DISABLED = 'fastindexer/indexer/disable_transaction_for_product';
     const XPATH_INDEXER_PRICE_TRANSACTION_DISABLED = 'fastindexer/indexer/disable_transaction_for_price';
+    const XPATH_INDEXER_STOCK_TRANSACTION_DISABLED = 'fastindexer/indexer/disable_transaction_for_stock';
 
     const XPATH_CONFIGURABLE_INDEXER_ENABLE ='fastindexer/configurable_indexer/enable_cron_index';
     const XPATH_CONFIGURABLE_INDEXER_PROCESS_LIST ='fastindexer/configurable_indexer/process_list';
@@ -295,6 +296,11 @@ class SchumacherFM_FastIndexer_Helper_Data extends Mage_Core_Helper_Abstract
     public function isTransactionDisabledForPriceReindex(){
         return Mage::getStoreConfigFlag(self::XPATH_INDEXER_PRICE_TRANSACTION_DISABLED);
     }
+
+    public function isTransactionDisabledForStockReindex(){
+        return Mage::getStoreConfigFlag(self::XPATH_INDEXER_PRICE_TRANSACTION_DISABLED);
+    }
+
 
     public function isConfigurableCronAutoIndexEnabled(){
         return Mage::getStoreConfigFlag(self::XPATH_CONFIGURABLE_INDEXER_ENABLE);

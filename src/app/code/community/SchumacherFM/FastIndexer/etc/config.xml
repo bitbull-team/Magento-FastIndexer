@@ -72,6 +72,11 @@
                     <product_indexer_price>SchumacherFM_FastIndexer_Model_Resource_Catalog_Product_Indexer_Price</product_indexer_price>
                 </rewrite>
             </catalog_resource>
+            <cataloginventory_resource>
+                <rewrite>
+                    <indexer_stock>SchumacherFM_FastIndexer_Model_Resource_CatalogInventory_Indexer_Stock</indexer_stock>
+                </rewrite>
+            </cataloginventory_resource>
         </models>
 
         <resources>

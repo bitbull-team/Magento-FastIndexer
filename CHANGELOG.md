@@ -11,4 +11,5 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - add config to toggle the transaction for catalog_product_flat
 - add configurable cron for reindex of a list of processes
 - add config to toggle the transaction for catalog_product_price
+- add config to toggle the transaction for cataloginventory_stock
 
